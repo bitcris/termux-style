@@ -119,5 +119,22 @@ fi
 
 
 
+echo "DESEJA APLICAR"
+echo "1 - ATÉ ENCERRAR A SESSÃO"
+echo "2 - PERMANENTEMENTE"
+echo "3 - RESTAURAR TEMA ORIGINAL"
+read modo
+
+if [ $modo = 1 ] ; then
+  source teste.sh
+elif [ $modo = 2 ] ; then
+  cp .bashrc .bashrc.pkp
+  mv teste.sh .bashrc
+elif [ $modo = 3 ] ; then
+  mv .bashrc.bkp .bashrc  
+else
+  echo "OPÇÃO INVÁLIDA"
+  echo
+fi    
 #mv ./teste.sh .bashrc2
 
