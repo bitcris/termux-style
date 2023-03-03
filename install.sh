@@ -129,7 +129,8 @@ if [ $modo = 1 ] ; then
   source teste.sh
 elif [ $modo = 2 ] ; then
   cp .bashrc .bashrc.pkp
-  mv teste.sh .bashrc
+  mv teste.sh .bashrc \
+  source .bashrc
 elif [ $modo = 3 ] ; then
   mv .bashrc.bkp .bashrc  
 else
