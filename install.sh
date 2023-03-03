@@ -1,0 +1,1 @@
+mv ./bashrc.sh .bashrc
