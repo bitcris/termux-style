@@ -1,8 +1,8 @@
 usuario=$(whoami)
 
-echo $usuario
 
-usx=GITHUB
+
+usx=$usuario
 cor=38
 
 n1=$(shuf -i 30-36 -n 1)
@@ -15,3 +15,4 @@ xp=${bk[$n3]}
 
 
 PS1='\033[01;${n2}m$xp \033[01;${n1}m\]$usx\[\033[00m\]\[\033[01;${n2}m\]\w\[\033[00m\]$ '
+
