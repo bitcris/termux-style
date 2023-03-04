@@ -3,6 +3,7 @@
 
 random(){
     f=teste.sh
+    
     echo 'usuario=$(whoami)' > $f
     echo 'usx=$usuario' >> $f
     echo  'cor=38' >> $f
@@ -11,29 +12,16 @@ random(){
     echo 'n3=$(shuf -i 0-7 -n 1)' >> $f
     echo "bk=( ★ ◆ ⎊ ❖ ⌘ ✚ ∆ ‣)" >> $f
     echo 'xp=${bk[$n3]}' >> $f
-    echo "PS1='\033[01;"'${n2}'"m"'$xp'" \033[01;"'${n1}'"m\]"'$usx'"\[\033[00m\]\[\033[01;"'${n2}'"m\]\w\[\033[00m\]$ '" >> $f
+    echo "PS1='\033[01;"'${n2}'"m"'$xp'" \033[01;"'${n1}'"m\]"'$usx'"\[\033[00m\]\[\033[01;"'${n2}'"m\]\w\[\033[00m\]$ \n"' ∟► '"'" >> $f
 
 }
 
-
-person(){
-
-#simbolo = $usim
-#cor Simbolo = $ucor
-#cor nome usuario = $unamx
-
-    f=teste.sh
-    echo 'usuario=$(whoami)' > $f
-    echo 'usx=$usuario' >> $f
-    echo "PS1='\033[01;"'${ucor}'"m"'$usim'" \033[01;"'${unamx}'"m\]"'$usx'"\[\033[00m\]\[\033[01;"'${n2}'"m\]\w\[\033[00m\]$ '" >> $f
-
-}
 
 
 write(){
 
 echo "ESCOLHA O NÚMERO DO SÍMBOLO"
-simbolos=( ★ ◆ ⎊ ❖ ⌘ ✚ ∆ ‣)
+simbolos=( ◈ ◆ ♜ ◩ ⌘ ✚ ∆ ‣ ⌬)
 cont=0
 
 for sim in "${simbolos[@]}"
@@ -85,9 +73,10 @@ unamx=${cores2[$nUname]}
 
 
     f=teste.sh
+    
     echo 'usuario=$(whoami)' > $f
     echo 'usx=$usuario' >> $f
-    echo "PS1='\033[01;"${ucor}"m"$usim" \033[01;"${unamx}"m\]"GABI"\[\033[00m\]\[\033[01;"${ucor}"m\]\w\[\033[00m\]$ '" >> $f
+    echo "PS1='\033[01;"${ucor}"m"$usim" \033[01;"${unamx}"m\]"'${usuario}'"\[\033[00m\]\[\033[01;"${ucor}"m\]\w\[\033[00m\]$ \n ∟► '" >> $f
 
 
 
@@ -119,24 +108,6 @@ fi
 
 
 
-echo "DESEJA APLICAR"
-echo "1 - ATÉ ENCERRAR A SESSÃO"
-echo "2 - PERMANENTEMENTE"
-echo "3 - RESTAURAR TEMA ORIGINAL"
-read modo
+source ./teste.sh
 
-if [ $modo = 1 ] ; then
-  source teste.sh
-elif [ $modo = 2 ] ; then
-  cp .bashrc .bashrc.pkp \
-  mv teste.sh .bashrc \
-  source .bashrc
-elif [ $modo = 3 ] ; then
-  mv .bashrc.bkp .bashrc  \
-  source .bashrc
-else
-  echo "OPÇÃO INVÁLIDA"
-  echo
-fi    
-#mv ./teste.sh .bashrc2
 
